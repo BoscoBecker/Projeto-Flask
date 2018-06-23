@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+	<title> Lista de Postagens</title>
+	<style>
+
+     	table { border-collapse: collapse;}
+		td, th {  border: 1px solid #ddd; padding: 8px;}
+		td {text-align: center}
+		tr:nth-child(even){background-color: #f2f2f2;}
+		tr:hover {background-color: #ddd;}
+		body { background-image: url(http://www.sinergiacientifica.com.br/wp-content/uploads/2013/10/fundo-11.jpg);
+		
+		font-family: 'Montserrat', sans-serif;
+		font-family: 'Shadows Into Light', cursive;
+		font-family: 'Amatic SC', cursive;
+		font-family: 'Poiret One', cursive;
+		font-family: 'Julius Sans One', sans-serif;}
+
+		.inserir{text-align: center;}
+
+		/* Para dar zoom nas imagens*/
+		.zoom {
+		padding: 50px;
+		transition: transform .1s;
+        margin: 0 auto;}
+		.zoom:hover {
+		-ms-transform: scale(2.8); /* IE 9 */
+		-webkit-transform: scale(2.8); /* Safari 3-8 */
+		transform: scale(2.8); }		
+
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Julius+Sans+One|Montserrat|Poiret+One|Shadows+Into+Light" rel="stylesheet"> 
+</head>
+ <body>
+         <div style="margin: 0 auto auto;width:720px; justify-content: center;align-items: center">
+        	<h2>Postagens Cadastradas no sistema</h2>
+            <table>
+             <tr>
+			   <th>Postagens</th>
+			   <th>Data</th>
+			   <th >Fotos</th>
+               <th>Ações</th>			   
+            </tr>
+			{% for postagem in lista_de_postagem %}
+            <tr>
+				 <td>{{ postagem.titulo}}</td>
+				 <td>{{ postagem.data}}</td>
+				 <td><img class="zoom" height="49px" src="{{ postagem.foto_url }}" /></td>
+				 <td>
+					<a href="/editar/{{postagem.id}}/">Editar</a> 
+					| 
+					<a href="/remover/{{postagem.id}}/">Remover</a> 
+				</td>
+            </tr>
+			{% endfor %}
+          </table>
+          <br/>
+          <p class="inserir"><a href="/cadastrar/">Inserir Postagens</a>
+        </div>
+</body>
+</html>
