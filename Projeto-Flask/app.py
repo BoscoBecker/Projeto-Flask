@@ -37,16 +37,14 @@ def remover(id):
 
 	
 @app.route("/cadastrar/",methods=["GET","POST"])
-def cadastrar():	 
-	if request.method=="POST":		
+def cadastrar():
+	if request.method=="POST":
 		try:
 			p = postagem()
 			p.titulo = request.form['titulo'] 
 			p.data = request.form['data']
 			p.foto_url = processa_upload("foto_url")
-		if request.form['titulo'] == "":
-	        raise Exception("titulo não informado!")			
-		p.save()
+			p.save()
 			return redirect("/")
 		except Exception as error:
 			return render_template("cadastrar.html", msg_error = error,	form = request.form.to_dict())
