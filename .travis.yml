@@ -7,7 +7,5 @@ python:
   # PyPy versions
   - "pypy3.5"
 # command to install dependencies
-install:
-  - pip install flask
-  - pip install requests
+
 
