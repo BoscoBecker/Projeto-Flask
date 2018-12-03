@@ -4,3 +4,5 @@ language: python
 install:
   - pip install -r requirements.txt
   - pip install .
+
+script : teste python setup.py
