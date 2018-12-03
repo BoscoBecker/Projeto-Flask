@@ -1,5 +1,4 @@
 requests
 werkzeug
-playhouse
 peewee
 os
