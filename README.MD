@@ -1,3 +1,4 @@
+# Simples CRUD web feito em Python usando SQLITE+PYTHON
 1 Executa o arquivo cria_banco.py
 
 2 Executa o arquivo tabelas.py
